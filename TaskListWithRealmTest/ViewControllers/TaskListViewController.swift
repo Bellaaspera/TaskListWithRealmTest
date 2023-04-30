@@ -91,6 +91,11 @@ extension TaskListViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction, doneAction])
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        taskListTableView.setEditing(editing, animated: true)
+    }
+    
 }
     
 // MARK: - Navigation
