@@ -32,8 +32,8 @@ extension UIAlertController {
     func action(task: Task?, completion: @escaping(String, String) -> Void) {
         let doneButton = task == nil ? "Save" : "Edit"
         let saveAction = UIAlertAction(title: doneButton, style: .default) { [weak self] _ in
-            guard let newTask = self?.textFields?.first?.text, !newTask.isEmpty else { return }
             
+            guard let newTask = self?.textFields?.first?.text, !newTask.isEmpty else { return }
             if let newNote = self?.textFields?.last?.text, !newNote.isEmpty {
                 completion(newTask, newNote)
             } else {

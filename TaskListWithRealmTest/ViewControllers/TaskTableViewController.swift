@@ -108,7 +108,7 @@ extension TaskTableViewController {
     }
     
     private func save(task: String, withNote note: String, to taskList: TaskList) {
-        StorageManager.shared.save(task, withNote: task, to: taskList) { task in
+        StorageManager.shared.save(task, withNote: note, to: taskList) { task in
             let rowIndex = IndexPath(row: currentTasks.index(of: task) ?? 0, section: 0)
             tableView.insertRows(at: [rowIndex], with: .automatic)
         }
